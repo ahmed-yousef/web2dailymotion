@@ -12,9 +12,9 @@ def index():
     return render_template('index.html',message="upload to dailymotion")
 
 def download_file(url):
-    local_filename = url.split('/')[-1]
+    local_filename=url[url.find("title")+6:-1]+str(4)
     # NOTE the stream=True parameter
-    work_path = os.path.dirname(os.path.realpath(__file__))+"\\tmp"
+    work_path = os.path.join(os.path.dirname(os.path.realpath(__file__)),'tmp')
     file=os.path.join(work_path,local_filename)
     r = requests.get(url, stream=True)
     with open(file, 'wb') as f:
