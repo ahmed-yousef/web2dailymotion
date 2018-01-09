@@ -1,1 +1,1 @@
-web: gunicorn main:app --preload -t 600
+web: gunicorn web2dailymotion:app --preload -t 600
