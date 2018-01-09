@@ -1,5 +1,6 @@
 from flask import Flask,redirect,request,url_for,session,render_template,send_from_directory
 import dailymotion
+import os
 
 app=Flask(__name__)
 
@@ -28,7 +29,7 @@ def upload():
     file_name=download_file(file_url)
     path=os.path.join(work_path, file_name)
     url = d.upload(path)
-    message='please auth'
+    message='Success'+file_name+"is uploaded"
     d.post('/me/videos',{'url': url, 'title': file_name, 'published': 'true', 'explicit': 'false'})
     return render_template('index.html',message=message)
 
