@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>web2dailymotion</title>
+</head>
+<body>
+<form action="{{url_for('upload')}}" method="POST">
+Enter Video URl HERE<input type="text" name="url" required="required">
+<input type="submit" value="upload">
+<form>
+<p style="color:red">{{message}}</p>
+</body>
+</html>
+
