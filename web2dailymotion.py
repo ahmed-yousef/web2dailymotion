@@ -33,7 +33,7 @@ def upload():
     return render_template('index.html',message=message)
 
 if __name__=='__main__':
-    app.run('127.0.0.1',8080,debug=True)
+    app.run(threaded=True)
 
 
 
